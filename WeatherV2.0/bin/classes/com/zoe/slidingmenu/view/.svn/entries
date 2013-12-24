@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="http://110.76.47.76:8881/svn/mycmnponent"
+   name=""
+   revision="29"
+   last-author="chenyuanyou"
+   url="http://110.76.47.76:8881/svn/mycmnponent/13COSlidingMenu/src/com/carlos/myslidingmenu/view"
+   committed-rev="29"
+   kind="dir"
+   committed-date="2013-04-16T06:09:34.866000Z"/>
+<entry
+   name="COFixListViewBugLinearLayout.java"
+   checksum="1528a86ae3b6820928853ce770144a51"
+   last-author="chenyuanyou"
+   text-time="2013-04-16T06:02:34.000000Z"
+   committed-rev="29"
+   kind="file"
+   committed-date="2013-04-16T06:09:34.866000Z"/>
+<entry
+   name="COSlidingMenu.java"
+   checksum="e22b6eb03e363304fdfb0a5b066c90ab"
+   last-author="chenyuanyou"
+   text-time="2013-04-16T06:02:34.000000Z"
+   committed-rev="29"
+   kind="file"
+   committed-date="2013-04-16T06:09:34.866000Z"/>
+<entry
+   name="COSlidingState.java"
+   checksum="63c4a7bc56d84fa04322dae6742f1ae9"
+   last-author="chenyuanyou"
+   text-time="2013-04-16T03:11:42.000000Z"
+   committed-rev="29"
+   kind="file"
+   committed-date="2013-04-16T06:09:34.866000Z"/>
+<entry
+   name="COSlidingView.java"
+   checksum="1bfd73c5b45fb3fdbbcd8da4ec622116"
+   last-author="chenyuanyou"
+   text-time="2013-04-16T02:11:07.000000Z"
+   committed-rev="29"
+   kind="file"
+   committed-date="2013-04-16T06:09:34.866000Z"/>
+</wc-entries>

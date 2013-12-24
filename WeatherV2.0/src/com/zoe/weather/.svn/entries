@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="http://110.76.47.76:8881/svn/mycmnponent"
+   name=""
+   revision="29"
+   last-author="chenyuanyou"
+   url="http://110.76.47.76:8881/svn/mycmnponent/13COSlidingMenu/src/com/carlos/myslidingmenu"
+   committed-rev="29"
+   kind="dir"
+   committed-date="2013-04-16T06:09:34.866000Z"/>
+<entry
+   name="MainActivity.java"
+   checksum="7fb4d367b2d7c41603b3c3f8bbd69aa6"
+   last-author="chenyuanyou"
+   text-time="2013-04-16T06:06:32.000000Z"
+   committed-rev="29"
+   kind="file"
+   committed-date="2013-04-16T06:09:34.866000Z"/>
+<entry
+   name="view"
+   kind="dir"/>
+</wc-entries>

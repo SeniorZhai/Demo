@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bizhi"
+    android:orientation="horizontal" >
+
+    <fragment
+        android:id="@+id/fragament_lift"
+        android:name="com.example.ott_demo.layout.Fragament_lift"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+    <fragment
+        android:id="@+id/fragament_right"
+        android:name="com.example.ott_demo.layout.Fragament_right"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5" />
+
+</LinearLayout>

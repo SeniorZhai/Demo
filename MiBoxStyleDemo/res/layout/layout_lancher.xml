@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <!-- 倒影 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="385.0dip" >
+
+        <ImageView
+            android:id="@+id/set_refimg_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/set_refimg_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="204dp" />
+
+        <ImageView
+            android:id="@+id/set_refimg_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="462dp" />
+
+        <ImageView
+            android:id="@+id/set_refimg_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="720dp" />
+    </RelativeLayout>
+
+    <!--  -->
+
+    <RelativeLayout
+        android:id="@+id/settings_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <FrameLayout
+            android:id="@+id/layout_app"
+            android:layout_width="508dip"
+            android:layout_height="490dip"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/app_shadow"
+                android:layout_width="508dip"
+                android:layout_height="490dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_big_left"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/app"
+                android:layout_width="247dp"
+                android:layout_height="357dp"
+                android:layout_marginLeft="104dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/green_no_shadow"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_app" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_game"
+            android:layout_width="562dip"
+            android:layout_height="490dip"
+            android:layout_marginLeft="204dp"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/game_shadow"
+                android:layout_width="562dip"
+                android:layout_height="490dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_big_center"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/game"
+                android:layout_width="247dp"
+                android:layout_height="357dp"
+                android:layout_marginLeft="158dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/orange_no_shadow"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_game" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_setting"
+            android:layout_width="562dip"
+            android:layout_height="490dip"
+            android:layout_marginLeft="462dp"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/setting_shadow"
+                android:layout_width="562dip"
+                android:layout_height="490dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_big_center"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="247dp"
+                android:layout_height="357dp"
+                android:layout_marginLeft="158dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/blue_no_shadow"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_setting" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_code"
+            android:layout_width="508dip"
+            android:layout_height="490dip"
+            android:layout_marginLeft="720dp"
+            android:visibility="visible" >
+
+            <ImageView
+                android:id="@+id/code_shadow"
+                android:layout_width="508dip"
+                android:layout_height="490dip"
+                android:scaleType="fitXY"
+                android:src="@drawable/shadow_big_right"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/code"
+                android:layout_width="247dp"
+                android:layout_height="357dp"
+                android:layout_marginLeft="158dp"
+                android:layout_marginTop="27dp"
+                android:background="@drawable/yellow_no_shadow"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/icon_app" />
+        </FrameLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/white_boder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_border"
+        android:visibility="visible" />
+
+</FrameLayout>

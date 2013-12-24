@@ -1,0 +1,23 @@
+{
+"update_url":"http://clients2.google.com/service/update2/crx",
+	"name": "Calculator",
+	"version": "3.5.2",
+	
+	"description": "Calculator for Google Chrome!",
+	"icons": {
+		"16": "16.ico",
+		"128": "128.ico",
+		"48": "48.ico"
+	},
+	
+	"app": {
+		"launch": {
+			"local_path": "index.html"
+		}
+	},
+	
+	"homepage_url": "http://www.aidantaylor.net/",
+	"incognito": "split",
+	"permissions": ["unlimitedStorage"],
+	"offline_enabled": true
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:paddingTop="480dp"
+    android:paddingBottom="40dp"
+    android:background="@drawable/bg"
+    >
+    <ProgressBar
+    	android:id="@+id/progressbar"
+    	style="?android:attr/progressBarStyleHorizontal"
+	    android:layout_width="600dp" 
+	    android:layout_height="30dp"
+	    android:layout_marginBottom="20dp"
+	    android:visibility="invisible"
+    />
+	<TextView
+		android:id="@+id/textview"
+	    android:layout_width="fill_parent" 
+	    android:layout_height="wrap_content" 
+	    android:gravity="center"
+	    android:textColor="#ffdddd"
+	    android:textSize="36dp"
+	    android:text="正在加载，请稍候..."
+	    android:visibility="invisible"
+	/>
+	<Button
+		android:id="@+id/install"
+	    android:layout_width="wrap_content" 
+	    android:layout_height="wrap_content" 
+	    android:gravity="center"
+	    android:textColor="#111111"
+	    android:textSize="36dp"
+	    android:text="安  装"
+	    android:visibility="invisible"
+	    android:background="@drawable/flash_btn"
+	/>
+</LinearLayout>

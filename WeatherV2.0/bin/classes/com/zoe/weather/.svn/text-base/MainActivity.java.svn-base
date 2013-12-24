@@ -1,0 +1,92 @@
+package com.carlos.myslidingmenu;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.carlos.myslidingmenu.view.COSlidingMenu;
+import com.carlos.myslidingmenu.view.COSlidingState;
+
+public class MainActivity extends Activity {
+	public static final String TAG = "MainActivity";
+	private COSlidingMenu coSlidingMenu;
+	private String title[] = { "待发送队列", "同步分享设置", "编辑我的资料", "找朋友", "告诉朋友", "节省流量", "推送设置", "版本更新", "意见反馈", "积分兑换", "精品应用", "常见问题", "退出当前帐号" };
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.home);
+		coSlidingMenu = (COSlidingMenu) findViewById(R.id.slidingMenu);
+		ViewGroup leftView = (ViewGroup) getLayoutInflater().inflate(R.layout.left_v, null);
+		ViewGroup rightView = (ViewGroup) getLayoutInflater().inflate(R.layout.right_v, null);
+		ViewGroup centerView = (ViewGroup) getLayoutInflater().inflate(R.layout.center_v, null);
+		coSlidingMenu.setCenterView(centerView);
+		int leftWidth = (int) getResources().getDimension(R.dimen.leftViewWidth);
+		int rightWidth = (int) getResources().getDimension(R.dimen.rightViewWidth);
+		coSlidingMenu.setLeftView(leftView, leftWidth);
+		coSlidingMenu.setRightView(rightView, rightWidth);
+
+		View ivRight = centerView.findViewById(R.id.ivRight);
+
+		ivRight.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Log.d(TAG, "点击了右边设置按钮");
+				if (coSlidingMenu.getCurrentUIState() == COSlidingState.SHOWRIGHT) {
+					coSlidingMenu.showViewState(COSlidingState.SHOWCENTER);
+				} else {
+					coSlidingMenu.showViewState(COSlidingState.SHOWRIGHT);
+				}
+			}
+		});
+		View ivLeft = centerView.findViewById(R.id.ivLeft);
+
+		ivLeft.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Log.d(TAG, "点击了左边设置按钮");
+				if (coSlidingMenu.getCurrentUIState() == COSlidingState.SHOWLEFT) {
+					coSlidingMenu.showViewState(COSlidingState.SHOWCENTER);
+				} else {
+					coSlidingMenu.showViewState(COSlidingState.SHOWLEFT);
+				}
+			}
+		});
+
+		// 设置左边的listview
+		ListView lvLeft = (ListView) leftView.findViewById(R.id.lvLeft);
+
+		lvLeft.setAdapter(new ArrayAdapter<String>(this, R.layout.item, R.id.tv_item, title));
+		lvLeft.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+
+				Log.d(TAG, "点击了左边的" + arg2);
+
+			}
+		});
+
+		View btnLeft = leftView.findViewById(R.id.btnLeft);
+		btnLeft.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Log.d(TAG, "点击左边菜单的按钮");
+				coSlidingMenu.showViewState(COSlidingState.SHOWCENTER);
+
+			}
+		});
+	}
+
+}

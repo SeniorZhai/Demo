@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- 资源 -->
+    <style name="ResItem">
+    	<item name="android:layout_width">302dp</item>
+    	<item name="android:layout_height">251dp</item>
+    	<item name="android:layout_weight">0</item>
+    	<item name="android:layout_margin">3dp</item>
+    </style>
+    
+	<!-- 角色选择头像显示 -->
+    <style name="RoleSelectHead">
+    	<item name="android:layout_width">170dp</item>
+    	<item name="android:layout_height">170dp</item>
+    	<item name="android:scaleType">fitXY</item>
+    </style>
+	<!-- 角色选择名字显示 -->
+    <style name="RoleSelectName">
+    	<item name="android:layout_width">160dp</item>
+    	<item name="android:layout_height">60dp</item>
+    	<item name="android:layout_marginTop">-16dp</item>
+    	<item name="android:layout_centerHorizontal">true</item>
+    	<item name="android:textSize">26dp</item>
+    	<item name="android:textColor">#000000</item>
+    	<item name="android:maxLength">10</item>
+    	<item name="android:gravity">center</item>
+    	<item name="android:focusable">false</item>
+    </style>
+    
+	<!-- 孩子信息文本 -->
+    <style name="ChildInfoText">
+    	<item name="android:layout_width">220dp</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_weight">0</item>
+    	<item name="android:textSize">26dp</item>
+    	<item name="android:textColor">#996c44</item>
+    	<item name="android:gravity">right</item>
+    </style>
+	<!-- 孩子信息输入框 -->
+    <style name="ChildInfoEdit">
+    	<item name="android:layout_width">260dp</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:layout_marginLeft">20dp</item>
+    	<item name="android:textSize">26dp</item>
+    	<item name="android:textColor">#996c44</item>
+    	<item name="android:maxLength">10</item>
+    	<item name="android:singleLine">true</item>
+    </style>
+	<!-- 孩子生日 -->
+    <style name="ChildInfoBirth">
+    	<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:textSize">24dp</item>
+    	<item name="android:textColor">#996c44</item>
+    	<item name="android:singleLine">true</item>
+    </style>
+    
+	<!-- 资源信息文本 -->
+    <style name="ResInfoText">
+    	<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:textSize">26dp</item>
+    	<item name="android:textColor">#6e4333</item>
+    	<item name="android:lineSpacingExtra">10dp</item>
+    </style>
+	<!-- 资源信息按钮文本 -->
+    <style name="ResInfoBtn">
+    	<item name="android:layout_width">224dp</item>
+    	<item name="android:layout_height">79dp</item>
+    	<item name="android:textSize">26dp</item>
+    	<item name="android:textColor">#1a1a1a</item>
+    	<item name="android:paddingBottom">5dp</item>
+    	<item name="android:gravity">center</item>
+    </style>
+    
+	<!-- 密码输入显示框 -->
+    <style name="PswKeyBox">
+    	<item name="android:layout_width">36dp</item>
+    	<item name="android:layout_height">36dp</item>
+    	<item name="android:layout_marginLeft">21dp</item>
+    	<item name="android:layout_marginRight">21dp</item>
+    </style>
+    
+    
+	<!-- 设置标题按钮 -->
+    <style name="SetTitleBtnSelect">
+    	<item name="android:layout_width">218dp</item>
+    	<item name="android:layout_height">71dp</item>
+    </style>
+	<!-- 设置标题按钮 -->
+    <style name="SetTitleBtn" parent="SetTitleBtnSelect">
+    	<item name="android:gravity">center</item>
+    	<item name="android:textSize">30dp</item>
+    	<item name="android:textColor">#ffffff</item>
+    </style>
+    
+	<!-- 设置模式按钮 -->
+    <style name="SetModeBtnSelect">
+    	<item name="android:layout_width">153dp</item>
+    	<item name="android:layout_height">63dp</item>
+    </style>
+	<!-- 设置模式按钮 -->
+    <style name="SetModeBtn" parent="SetModeBtnSelect">
+    	<item name="android:gravity">center</item>
+    	<item name="android:textSize">24dp</item>
+    	<item name="android:textColor">#51354e</item>
+    </style>
+    <!-- 设置信息文本 -->
+    <style name="SetInfoText">
+    	<item name="android:layout_width">wrap_content</item>
+    	<item name="android:layout_height">wrap_content</item>
+    	<item name="android:gravity">center</item>
+    	<item name="android:textSize">24dp</item>
+    	<item name="android:textColor">#7a6142</item>
+    </style>
+    <!-- 设置信息数字输入框 -->
+    <style name="SetInfoNum" parent="SetInfoText">
+    	<item name="android:layout_width">70dp</item>
+    	<item name="android:layout_height">62dp</item>
+    	<item name="android:background">@drawable/set_num_bg</item>
+    </style>
+</resources>

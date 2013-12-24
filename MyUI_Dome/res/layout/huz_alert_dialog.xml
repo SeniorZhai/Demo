@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/parentPanel" android:background="@drawable/backone" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.5">
+        <TextView android:textSize="26.0sp" android:textColor="#ffffffff" android:id="@id/text1" android:paddingTop="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="软件更新" />
+        <View android:background="@drawable/fen" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:gravity="center_horizontal" android:id="@id/text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="检测到新版本，是否下载更新" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.5">
+        <Button android:textSize="18.0sp" android:textColor="#ffffffff" android:id="@id/btn_queren" android:background="@drawable/btn_gengxin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="立即更新" />
+        <Button android:textSize="18.0sp" android:textColor="#ffffffff" android:id="@id/btn_quxiao" android:background="@drawable/btn_gengxin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="稍后再说" />
+    </LinearLayout>
+</LinearLayout>

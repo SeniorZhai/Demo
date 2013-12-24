@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/base" android:background="@drawable/beijing" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingTop="4.0px" android:paddingBottom="4.0px" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27.0px" android:src="@drawable/logo" />
+        <LinearLayout android:gravity="center_vertical" android:id="@id/lay_tianqi" android:paddingLeft="10.0px" android:paddingRight="10.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tianqi" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffc0c0c0" android:id="@id/tv_tianqi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-6℃-14℃" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:paddingLeft="10.0px" android:paddingRight="10.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/shijian" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffc0c0c0" android:id="@id/tv_shijian" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2013-3-13 14:30" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:background="@drawable/titletiao" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center_vertical" android:background="#ff006e89" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="84.0dip">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/favorite" />
+            <TextView android:textSize="40.0sp" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/favorite" />
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="65.0dip">
+                <ImageView android:layout_width="wrap_content" android:layout_height="200.0dip" android:src="@drawable/xu" android:scaleType="matrix" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="200.0dip" android:layout_marginTop="30.0sp" android:src="@drawable/xu" android:scaleType="matrix" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="65.0dip" android:layout_alignParentRight="true">
+                <ImageView android:layout_width="wrap_content" android:layout_height="200.0dip" android:src="@drawable/xu1" android:scaleType="matrix" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="200.0dip" android:layout_marginTop="30.0dip" android:src="@drawable/xu1" android:scaleType="matrix" />
+            </LinearLayout>
+            <android.support.v4.view.ViewPager android:id="@id/viewPager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        </RelativeLayout>
+    </FrameLayout>
+    <LinearLayout android:gravity="right|center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:layout_marginBottom="8.0dip">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/gundongtiao" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="450.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <ImageView android:id="@id/p_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/left_n" />
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/p_now" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="01" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/_page_line" />
+            <TextView android:textSize="22.0sp" android:textColor="#ff2b2b2b" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/p_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="01" />
+            <ImageView android:id="@id/p_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/right" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/backpic" android:paddingLeft="4.0px" android:paddingTop="2.0px" android:paddingRight="4.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0px">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/pifu" />
+            <TextView android:textSize="20.0sp" android:textColor="#fff0f0f0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="壁纸" />
+        </LinearLayout>
+        <RelativeLayout android:paddingLeft="4.0px" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:id="@id/favorite" android:paddingLeft="12.0px" android:paddingTop="2.0px" android:paddingRight="4.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/shoucang" />
+                <TextView android:textSize="20.0sp" android:textColor="#fff0f0f0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="我的收藏" />
+            </LinearLayout>
+            <TextView android:textStyle="bold" android:textColor="#fff0f0f0" android:gravity="center" android:id="@id/num" android:background="@drawable/soucangshu" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="01" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/history" android:paddingLeft="4.0px" android:paddingTop="2.0px" android:paddingRight="4.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0px">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lishitubiao2" />
+            <TextView android:textSize="20.0sp" android:textColor="#fff0f0f0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="历史观看" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/search" android:paddingLeft="4.0px" android:paddingTop="2.0px" android:paddingRight="4.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0px">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/sousuotubiao" />
+            <TextView android:textSize="20.0sp" android:textColor="#fff0f0f0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="10.0dip" android:text="搜索" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

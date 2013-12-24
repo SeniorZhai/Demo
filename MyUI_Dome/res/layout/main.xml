@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/base" android:background="@drawable/beijing" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingTop="4.0px" android:paddingBottom="4.0px" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27.0px" android:src="@drawable/logo" />
+        <LinearLayout android:gravity="center_vertical" android:id="@id/lay_tianqi" android:paddingLeft="10.0px" android:paddingRight="10.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tianqi" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffc0c0c0" android:id="@id/tv_tianqi" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="-6℃-14℃" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:paddingLeft="10.0px" android:paddingRight="10.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/lay_tianqi" android:layout_centerVertical="true">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/shijian" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffc0c0c0" android:id="@id/tv_shijian" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2013-3-13 14:30" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:background="@drawable/titletiao" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+    <LinearLayout android:gravity="center_vertical" android:background="@drawable/tiao1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="34.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:id="@id/newmovie" android:background="@drawable/btn_menu" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="100.0dip" android:text="最新电影" android:layout_weight="19.0" />
+        <TextView android:textSize="34.0sp" android:textStyle="bold" android:textColor="#ff4d4f50" android:gravity="center" android:id="@id/hotmovie" android:background="@drawable/btn_menu" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="热播大片" android:layout_weight="21.0" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/typearea" android:background="@drawable/btn_menu" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="70.0dip" android:layout_weight="16.0">
+            <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="5.0dip" android:src="@drawable/tubiaobeiyong" android:scaleType="fitXY" />
+            <TextView android:textSize="34.0sp" android:textColor="#ff4d4f50" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="类型:" />
+            <TextView android:textSize="34.0sp" android:textColor="#ff4d4f50" android:id="@id/type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="全部" />
+            <TextView android:textSize="34.0sp" android:textColor="#ff4d4f50" android:paddingLeft="60.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="地区:" />
+            <TextView android:textSize="34.0sp" android:textColor="#ff4d4f50" android:id="@id/area" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="全部" />
+        </LinearLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0px" android:layout_weight="1.0">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:id="@id/left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="65.0dip">
+                <ImageView android:layout_width="wrap_content" android:layout_height="180.0dip" android:src="@drawable/xu" android:scaleType="fitXY" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="180.0dip" android:layout_marginTop="70.0dip" android:src="@drawable/xu" android:scaleType="fitXY" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/right" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="65.0dip" android:layout_alignParentRight="true">
+                <ImageView android:layout_width="wrap_content" android:layout_height="180.0dip" android:src="@drawable/xu1" android:scaleType="fitXY" />
+                <ImageView android:layout_width="wrap_content" android:layout_height="180.0dip" android:layout_marginTop="70.0dip" android:src="@drawable/xu1" android:scaleType="fitXY" />
+            </LinearLayout>
+            <android.support.v4.view.ViewPager android:id="@id/viewPager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        </RelativeLayout>
+        <ImageView android:layout_gravity="center" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/suosoubuchu" />
+    </FrameLayout>
+    <LinearLayout android:gravity="right|center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:layout_marginBottom="8.0dip">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/gundongtiao" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="230.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <ImageView android:id="@id/p_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/left_n" />
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/p_now" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="00" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/_page_line" />
+            <TextView android:textSize="22.0sp" android:textColor="#ff2b2b2b" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/p_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="00" />
+            <ImageView android:id="@id/p_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/right" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/backpic" android:paddingLeft="4.0px" android:paddingTop="2.0px" android:paddingRight="4.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0px">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bizhitubiao" />
+            <TextView android:textSize="20.0sp" android:textColor="#fff0f0f0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="壁纸" />
+        </LinearLayout>
+        <RelativeLayout android:paddingLeft="4.0px" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:id="@id/favorite" android:paddingLeft="12.0px" android:paddingTop="2.0px" android:paddingRight="4.0px" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/shoucangtubiao" />
+                <TextView android:textSize="20.0sp" android:textColor="#fff0f0f0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="我的收藏" />
+            </LinearLayout>
+            <TextView android:textStyle="bold" android:textColor="#fff0f0f0" android:gravity="center" android:id="@id/num" android:background="@drawable/soucangshu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="01" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/history" android:paddingLeft="4.0px" android:paddingTop="2.0px" android:paddingRight="4.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0px">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/lishitubiao2" />
+            <TextView android:textSize="20.0sp" android:textColor="#fff0f0f0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="历史观看" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:id="@id/search" android:paddingLeft="4.0px" android:paddingTop="2.0px" android:paddingRight="4.0px" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="4.0px">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/sousuotubiao" />
+            <TextView android:textSize="20.0sp" android:textColor="#fff0f0f0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="搜索" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
