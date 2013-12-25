@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Unit5_Intents</string>
+    <string name="action_settings">Settings</string>
+    <string name="str1">This is MainActivity</string>
+    <string name="str2">This is OtherActivity</string>
+    <string name="bn1_text">显示启动</string>
+    <string name="bn2_text">隐式启动</string>
+    <string name="bn3_text">带检测的隐式启动</string>
+    <string name="bn4_text">又返回结构的启动</string>
+    <string name="_bn1_text">返回</string>
+    
+
+</resources>

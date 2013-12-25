@@ -1,0 +1,10 @@
+package com.example.ott_demo6.data;
+
+public class Json_data {
+	public class rating{
+		public class douban{
+			String rating;
+			String link;
+		}
+	}
+}

@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_left"
+    android:layout_width="180dp"
+    android:layout_height="fill_parent"
+    android:background="@color/grey21"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最近天气"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <com.zoe.slidingmenu.view.FixListViewBugLinearLayout
+        android:id="@+id/mylaout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" 
+            android:orientation="horizontal">
+			  <ListView
+                android:id="@+id/lvLeft_1"
+                android:layout_width="100dp"
+                android:layout_height="fill_parent" >
+            </ListView>
+            <ListView
+                android:id="@+id/lvLeft_2"
+                android:layout_width="80dp"
+                android:layout_height="fill_parent" >
+            </ListView>   
+        </LinearLayout>
+    </com.zoe.slidingmenu.view.FixListViewBugLinearLayout>
+
+</LinearLayout>

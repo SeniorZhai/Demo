@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    >
+    
+    <LinearLayout
+    	android:id="@+id/item_child_info_layout"
+    	android:layout_width="fill_parent"
+    	android:layout_height="144dp"
+    	android:layout_marginLeft="20dp"
+    	android:layout_marginTop="5dp"
+    	android:paddingLeft="160dp"
+    	android:layout_centerVertical="true"
+	    android:orientation="vertical"
+    	android:gravity="center_vertical"
+    	android:background="@drawable/ctrl_child_bg"
+    >
+    	<TextView
+	    	android:id="@+id/item_child_name"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:textColor="#8d6d50"
+	    	android:textSize="36dp"
+    	/>
+    	<TextView
+	    	android:id="@+id/item_child_age"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginTop="5dp"
+	    	android:textColor="#9ea82d"
+	    	android:textSize="24dp"
+    	/>
+	</LinearLayout>
+	
+    <ImageView
+    	android:id="@+id/item_child_head"
+    	android:layout_width="170dp"
+    	android:layout_height="170dp"
+    	android:layout_centerVertical="true"
+    />
+    
+	<ImageView
+    	android:id="@+id/item_child_del"
+    	android:layout_width="77dp"
+    	android:layout_height="77dp"
+    	android:layout_marginRight="32dp"
+    	android:background="@drawable/ctrl_child_del"
+    	android:layout_centerVertical="true"
+    	android:layout_alignParentRight="true"
+    />
+	
+	<ImageView
+    	android:id="@+id/item_child_res"
+    	android:layout_width="77dp"
+    	android:layout_height="77dp"
+    	android:background="@drawable/ctrl_child_set"
+    	android:layout_centerVertical="true"
+    	android:layout_toLeftOf="@id/item_child_del"
+    />
+	
+	<ImageView
+    	android:id="@+id/item_child_guide"
+    	android:layout_width="77dp"
+    	android:layout_height="77dp"
+    	android:background="@drawable/ctrl_child_set"
+    	android:layout_centerVertical="true"
+    	android:layout_toLeftOf="@id/item_child_res"
+    	android:visibility="invisible"
+    />
+</RelativeLayout>

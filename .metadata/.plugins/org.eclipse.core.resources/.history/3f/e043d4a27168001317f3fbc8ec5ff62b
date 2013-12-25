@@ -1,0 +1,179 @@
+package com.zoe.ott_videoview;
+
+import java.util.ArrayList;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.zoe.ott_videoview.data.GetDataTask;
+
+public class StateActivity extends Activity {
+	private TextView titleView, directorView, actorView, briefView;
+	private Button enter;
+	private ImageView imageView;
+	private GridView gridView;
+	private ArrayList<String> sites;
+	private String targetUrl;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_state);
+		titleView = (TextView) findViewById(R.id.title);
+		directorView = (TextView) findViewById(R.id.director);
+		actorView = (TextView) findViewById(R.id.actor);
+		imageView = (ImageView) findViewById(R.id.imageView);
+		gridView = (GridView) findViewById(R.id.selectgrid);
+		briefView = (TextView) findViewById(R.id.briefView);
+		enter = (ImageButton)findViewById(R.id.enter_state);
+		
+		Intent intent = getIntent();
+		String url = intent.getStringExtra("url");
+		String type = intent.getStringExtra("type");
+		if (!type.equals("movie")) {
+			enter.setVisibility(View.GONE);
+		}
+		StateGetDataTask task = new StateGetDataTask();
+		task.execute(
+				"url",
+				"type");
+		enter.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(StateActivity.this, targetUrl,
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+		gridView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				Toast.makeText(StateActivity.this, targetUrl+sites.get(arg2),
+						Toast.LENGTH_SHORT).show();
+			}
+		});
+	}
+
+	class StateGetDataTask extends AsyncTask<String, Integer, Void> {
+		private String title, director, actor, brief;
+
+		private MyAdapter myAdapter;
+
+		@Override
+		protected Void doInBackground(String... params) {
+			String str = GetDataTask.getData(params[0]);
+			sites = new ArrayList<String>();
+
+			try {
+				JSONTokener jsonParser = new JSONTokener(str);
+				JSONObject data = (JSONObject) jsonParser.nextValue();				
+				brief = data.getString("brief");
+				title = data.getString("title");
+				targetUrl = data.getString("ip_server");
+				JSONArray actors = data.getJSONArray("actor");
+				actor = "ÑÝÔ±£º";
+				for (int i = 0; i < actors.length(); i++) {
+					actor += "\n\t" + actors.getString(i);
+				}
+				JSONArray directors = data.getJSONArray("director");
+				director = "µ¼ÑÝ£º";
+				for (int i = 0; i < directors.length(); i++) {
+					director += "\n\t" + directors.getString(i);
+				}
+				brief = data.getString("brief");
+				if (!"movie".equals(params[1])) {
+					JSONArray array = data.getJSONArray("sites");
+					for (int i = 0; i < array.length(); i++) {
+						JSONArray jsonArray = (JSONArray) array.get(i);
+						sites.add(jsonArray.getString(1));
+					}
+				}
+				else {
+					targetUrl += data.getString("sites");
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void result) {
+			titleView.setText(title);
+			actorView.setText(actor);
+			directorView.setText(director);
+			briefView.setText("¼ò½é£º\n\t" + brief);
+			if (sites.size() != 0) {
+
+				myAdapter = new MyAdapter(sites.size(), StateActivity.this);
+				gridView.setAdapter(myAdapter);
+			} else {
+				gridView.setVisibility(View.GONE);
+			}
+
+		}
+	}
+
+	private class MyAdapter extends BaseAdapter {
+		private int size;
+		private LayoutInflater inflater;
+
+		public MyAdapter(int size, Context context) {
+			this.size = size;
+			inflater = (LayoutInflater) context
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		}
+
+		@Override
+		public int getCount() {
+			return size;
+		}
+
+		@Override
+		public Object getItem(int position) {
+			return position;
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			LinearLayout gridView = null;
+			if (convertView == null) {
+				gridView = (LinearLayout) inflater.inflate(
+						R.layout.select_grid_item, null);
+			} else {
+				gridView = (LinearLayout) convertView;
+			}
+			TextView textView = (TextView) gridView
+					.findViewById(R.id.text_item);
+			textView.setText(1 + position + "");
+			return gridView;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">莞网通讯</string>
+    <string name="button1">电视剧</string>
+    <string name="button2">电    影</string>
+    <string name="button3">动    漫</string>
+    <string name="button4">排行榜</string>    
+</resources>

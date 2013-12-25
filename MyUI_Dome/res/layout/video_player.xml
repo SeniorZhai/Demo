@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/re" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.example.mytvui.OTTPlayerView android:id="@id/video" android:focusable="false" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:id="@id/re_buffer" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ProgressBar android:id="@id/progress_before" android:layout_width="80.0dip" android:layout_height="80.0dip" android:layout_marginTop="180.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="32.0sp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="视频缓冲中，请稍候..." android:layout_below="@id/progress_before" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/iszhanting" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_width="200.0dip" android:layout_height="200.0dip" android:src="@drawable/iszhanting1" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:id="@id/re_ctrl" android:background="@drawable/timebg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:textSize="32.0sp" android:textColor="#ffffffff" android:id="@id/ctrltime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="时间" android:layout_centerHorizontal="true" />
+    </LinearLayout>
+    <RelativeLayout android:id="@id/re_bottom" android:background="#af000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="120.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/ll1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <Button android:id="@id/tingzhi" android:background="@drawable/btn_tingzhi" android:focusable="true" android:visibility="gone" android:layout_width="72.0dip" android:layout_height="72.0dip" android:layout_margin="10.0dip" />
+            <Button android:id="@id/kuaitui" android:background="@drawable/btn_kuaitui" android:focusable="true" android:layout_width="72.0dip" android:layout_height="72.0dip" android:layout_margin="10.0dip" />
+            <Button android:id="@id/bofang" android:background="@drawable/btn_bofang" android:focusable="true" android:layout_width="72.0dip" android:layout_height="72.0dip" android:layout_margin="10.0dip" />
+            <Button android:id="@id/kuaijin" android:background="@drawable/btn_kuaijin" android:focusable="true" android:layout_width="72.0dip" android:layout_height="72.0dip" android:layout_margin="10.0dip" />
+        </LinearLayout>
+        <TextView android:textSize="25.0sp" android:textColor="#ffffffff" android:id="@id/tv_now" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="0:0:0" android:layout_alignTop="@id/ll1" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="25.0sp" android:textColor="#ffffffff" android:id="@id/tv_total" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="0:0:0" android:layout_alignTop="@id/ll1" android:layout_alignParentRight="true" />
+        <LinearLayout android:id="@id/seekbarLinearLay" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+            <SeekBar android:gravity="center" android:layout_gravity="center" android:id="@id/seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="5.0dip" android:progressDrawable="@drawable/seekbar_img" android:minHeight="5.0dip" android:thumb="@drawable/seekbar_thumb" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/re_top" android:background="#bf000000" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="80.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+        <LinearLayout android:gravity="center_vertical" android:id="@id/lay_tianqi" android:paddingLeft="10.0px" android:paddingRight="10.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tianqi" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffc0c0c0" android:id="@id/tv_tianqi" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="-6℃-14℃" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:paddingLeft="10.0px" android:paddingRight="10.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/lay_tianqi" android:layout_centerVertical="true">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/shijian" />
+            <TextView android:textSize="20.0sp" android:textColor="#ffc0c0c0" android:id="@id/tv_shijian" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2013-3-13 14:30" />
+        </LinearLayout>
+        <ProgressBar android:id="@id/pg_buffer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="32.0sp" android:id="@id/tv_vname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="电影名称啦" android:layout_toRightOf="@id/pg_buffer" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/re_menu" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="300.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="vertical" android:id="@id/jianjie" android:background="#a022494e" android:padding="20.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="5.0">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="32.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/moviename" android:layout_width="350.0dip" android:layout_height="wrap_content" android:text="上位上位上位上位上位上位" android:singleLine="true" />
+                <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="24.0sp" android:textColor="#ffed5000" android:id="@id/tv_moviecount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="评分：" />
+                    <TextView android:textSize="24.0sp" android:textColor="#ffed5000" android:id="@id/tv_movievalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7.8分" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/tv_daoyan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="导演：" />
+                <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/tv_daoyanvalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="管小杰" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/tv_zhuyan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="主演：" />
+                <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/tv_zhuyanvalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="赵奕欢/文卓/赵奕欢/文卓/赵奕欢/文卓/赵奕欢/文卓/" android:singleLine="true" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/tv_area" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="地区：" />
+                        <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/tv_areavalue" android:layout_width="300.0dip" android:layout_height="wrap_content" android:text="大陆大陆大陆大陆大陆大陆大陆大陆" android:singleLine="true" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/tv_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="类型：" />
+                        <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/tv_typevalue" android:layout_width="300.0dip" android:layout_height="wrap_content" android:text="剧情  爱情" android:singleLine="true" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="1.0dip">
+                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/tv_year" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="年份：" />
+                            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/tv_yearvalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2003" android:singleLine="true" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="时长：" />
+                            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:id="@id/tv_timevalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="90分钟" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView android:textSize="20.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/tv_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="123" android:lines="4" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/tujian" android:background="#a0000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="11.0">
+            <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageButton android:layout_gravity="center" android:id="@id/btn_souchang" android:background="@drawable/btn_menu" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:src="@drawable/favo" />
+                <ImageButton android:layout_gravity="center" android:id="@id/btn_uc" android:background="@drawable/btn_menu" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:src="@drawable/chaobeifen" />
+                <ImageButton android:layout_gravity="center" android:id="@id/btn_hd" android:background="@drawable/btn_menu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:src="@drawable/gao" />
+                <ImageButton android:layout_gravity="center" android:id="@id/btn_sd" android:background="@drawable/btn_menu" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:src="@drawable/biaobeifen" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textSize="20.0sp" android:textColor="#ff01a4f1" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:padding="20.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="相\n\n关\n\n推\n\n荐" />
+                <ImageView android:background="@drawable/xuanchuang" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

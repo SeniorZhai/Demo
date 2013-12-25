@@ -1,0 +1,76 @@
+package com.zoe.ott_videoview;
+
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.zoe.ott_videoview.data.GetDataTask;
+
+public class StateActivity extends Activity {
+	private TextView textView;
+	private ImageView imageView;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_state);
+		textView = (TextView) findViewById(R.id.stateView);
+		imageView = (ImageView) findViewById(R.id.imageView);
+		String url = getIntent().getStringExtra("url");
+		new Task().execute(url);
+	}
+
+	class Task extends AsyncTask<String, Void, String> {
+		Bitmap bitmap;
+		@Override
+		protected String doInBackground(String... params) {
+			String string = GetDataTask.getData(params[0]);
+			String title = null, language = null, area = null, brief = null, alias = null, pubtime = null;
+			
+			JSONArray type;
+			try {
+				JSONTokener jsonParser = new JSONTokener(string);
+				JSONObject data = (JSONObject) jsonParser.nextValue();
+				title = data.getString("title");
+				language = data.getString("language");
+				area = data.getString("area");
+				brief = data.getString("brief");
+				alias = data.getString("alias");
+				pubtime = data.getString("pubtime");
+				type = data.getJSONArray("type");
+
+				URL url = new URL(data.getString("poster_url"));
+				HttpURLConnection connection = (HttpURLConnection) url
+						.openConnection();
+				connection.setDoInput(true);
+				connection.connect();
+				InputStream inputStream = connection.getInputStream();
+				bitmap = BitmapFactory.decodeStream(inputStream);
+				inputStream.close();
+
+			} catch (Exception e) {
+
+			}
+			return "标题：" + title + "\n语言：" + language + "\n所属地：" + area
+					+ "\n别名：" + alias + "\n上映时间：" + pubtime + "\n简介：\n\t"
+					+ brief;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			textView.setText(result);
+		}
+	}
+}

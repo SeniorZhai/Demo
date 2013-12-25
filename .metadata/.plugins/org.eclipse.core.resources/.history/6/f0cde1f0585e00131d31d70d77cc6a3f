@@ -1,0 +1,44 @@
+package com.example.demo_mediaplay;
+
+import java.io.File;
+
+import android.app.Activity;
+import android.graphics.PixelFormat;
+import android.os.Bundle;
+import android.util.Log;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
+public class MainActivity extends Activity {
+	VideoView videoView;
+	MediaController mediaController;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		getWindow().setFormat(PixelFormat.TRANSLUCENT);
+		videoView =(VideoView)findViewById(R.id.videoView);
+		mediaController = new MediaController(this);
+//		videoView.setVideoURI(Uri.parse("rtsp://192.168.1.67/1/dianying_x10001_SayYes.mp4"));
+//		videoView.setVideoURI(Uri.parse("rtsp://192.168.1.67/1/1.mp4"));
+//		videoView.setVideoURI(Uri.parse("rtsp://192.168.1.67/1/dianying_x10000_Special26.mp4"));
+//		videoView.setVideoURI(Uri.parse("rtsp://192.168.1.67/1/dianying_x10009_BorderRun.mp4"));
+//	
+//		videoView.start();
+//		videoView.seekTo(videoView.getDuration()/4);
+//		videoView.setMediaController(mediaController);
+//		videoView.requestFocus();
+		
+		File video = new File("/mnt/sdcard/local.mp4");
+		Log.d("TAG", video.exists()+"");
+		if(video.exists())
+		{
+			videoView.setVideoPath(video.getAbsolutePath());
+			videoView.setMediaController(mediaController);
+			mediaController.setMediaPlayer(videoView);
+			videoView.requestFocus();
+		}
+	}
+	
+
+}

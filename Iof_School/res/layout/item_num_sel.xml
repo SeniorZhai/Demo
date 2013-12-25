@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="70dp"
+	android:layout_height="wrap_content"
+>
+	<View
+    	android:id="@+id/item_num_a1"
+    	android:layout_width="28dp"
+    	android:layout_height="20dp"
+    	android:background="@drawable/info_a1"
+    	android:layout_centerHorizontal="true"
+   	/>
+    <TextView
+    	android:id="@+id/item_num_text"
+    	style="@style/SetInfoNum"
+    	android:layout_marginTop="-11dp"
+    	android:layout_marginBottom="-11dp"
+    	android:layout_below="@id/item_num_a1"
+    />
+   	<View
+    	android:id="@+id/item_num_a2"
+    	android:layout_width="28dp"
+    	android:layout_height="20dp"
+    	android:background="@drawable/info_a2"
+    	android:layout_centerHorizontal="true"
+    	android:layout_below="@id/item_num_text"
+   	/>
+</RelativeLayout>

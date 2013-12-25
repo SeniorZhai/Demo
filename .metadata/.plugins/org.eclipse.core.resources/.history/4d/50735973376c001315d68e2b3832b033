@@ -1,0 +1,19 @@
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class Get {
+	public static void main(String[] args) {
+		URL url;
+		try {
+			url = new URL("http://192.168.1.162/dianying");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setConnectTimeout(5*1000);
+			conn.setRequestMethod("GET");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}

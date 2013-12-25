@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--Version 3.5.2 - www.aidantaylor.net-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Calculator</title>
+<script type="text/javascript" src="jquery-1.7.2.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.18.js"></script>
+<script type="text/javascript" src="actions.js"></script>
+<link href="site%20reset.css" rel="stylesheet" type="text/css">
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFF99;
+}
+-->
+</style></head>
+<body>
+<div class="container">
+  <!--   <button class="settingsButton">Settings</button>    -->
+  <button class="back">back</button>
+  <div class="settings">
+    <form name="settings" onSubmit="return:false;">
+      <div class="option theme">
+        <label>Theme:</label>
+        <br />
+        <br />
+        <a class="lightButton">light</a> <a class="darkButton">dark</a> </div>
+      <br />
+      <div class="option displayin">
+        <label>Display in:</label>
+        <br />
+        <br />
+        <a class="popup">Pop Up<sup style="color:red;">BETA</sup></a> <a class="browser">Browser</a> </div>
+    </form>
+  </div>
+  <div class="calculator">
+    <div class="screen">
+      <div id="method"></div>
+      <div class="clearfloat"></div>
+      <span id="screen">0</span>
+    </div>
+    <div class="top">
+      <div class="ac right">
+        <button onClick="key('mp')">M&#43;</button>
+        <button onClick="key('backspace')" class="arrow"><sup>&larr;</sup></button>
+        <button onClick="key('ce')">CE</button>
+        <button onClick="key('ac')">AC</button>
+      </div>
+      <div class="clearfloat"></div>
+      <div class="memory">
+        <button onClick="key('mm')">M&#45</button>
+        <button onClick="key('ms')">MS</button>
+        <button onClick="key('mr')">MR</button>
+        <button onClick="key('mc')">MC</button>
+      </div>
+    </div>
+    <div class="clearfloat"></div>
+    <div class="round">
+      <button onClick="key(7)">7</button>
+      <button onClick="key(8)">8</button>
+      <button onClick="key(9)">9</button>
+      <button onClick="key('/');">&divide;</button>
+      <br />
+      <button onClick="key(4)">4</button>
+      <button onClick="key(5)">5</button>
+      <button onClick="key(6)">6</button>
+      <button onClick="key('*');">&times;</button>
+      <br />
+      <button onClick="key(1)">1</button>
+      <button onClick="key(2)">2</button>
+      <button onClick="key(3)">3</button>
+      <button onClick="key('-');">&#45;</button>
+      <br />
+      <button onClick="key('.')">&#8226;</button>
+      <button onClick="key(0)">0</button>
+      <button onClick="key('=')">&#61;</button>
+      <button onClick="key('+');">&#43;</button>
+    </div>
+    <div class="clearfloat"></div>
+  </div>
+    <div class="clearfloat"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class Get {
+	public static void main(String[] args) {
+		URL url;
+		try {
+			url = new URL("http://192.168.1.162/dianying");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setConnectTimeout(5*1000);
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("channel", "hot");
+			String str = conn.getResponseMessage();
+			InputStreamReader isr = new InputStreamReader(
+					conn.getInputStream(), "utf-8");
+			BufferedReader br = new BufferedReader(isr);
+			String temp;
+			while ((temp = br.readLine()) != null) {
+				html.append(temp);
+			}
+			br.close(); // ¹Ø±Õ
+			isr.close(); // ¹Ø±Õ
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}

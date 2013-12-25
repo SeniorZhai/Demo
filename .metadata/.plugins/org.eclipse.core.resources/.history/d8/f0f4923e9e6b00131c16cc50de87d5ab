@@ -1,0 +1,26 @@
+package com.zoe.gestureactivity;
+
+import android.app.Activity;
+import android.gesture.GestureUtils;
+import android.os.Bundle;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+
+public class GestureActivity extends Activity {
+	private GestureDetector gestureDetector;
+	private Screen screen;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		gestureDetector = new GestureDetector(this,onGestureListener);
+        //得到屏幕的大小
+        screen = GestureUtils.getScreenPix(this);
+	}
+
+	 @Override
+	    public boolean onTouchEvent(MotionEvent event) {
+	        return gestureDetector.onTouchEvent(event);
+	    }
+
+}

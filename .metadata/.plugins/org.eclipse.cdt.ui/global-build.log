@@ -1,0 +1,6 @@
+15:20:00 **** Build of configuration Default for project First ****
+bash F:/AndroidWorkSpace/First/build_native.sh 
+Cannot run program "bash": Launching failed
+
+Error: Program "bash" not found in PATH
+PATH=[C:/Program Files/Java/jre7/bin/client;C:/Program Files/Java/jre7/bin;C:/Program Files/Java/jre7/lib/i386;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\Java\jdk1.7.0_10\bin;D:\Java\jdk1.7.0_10\jre\bin;D:\android-sdk\platform-tools;D:\android-sdk\tools;D:\Python;C:\Program Files\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;D:\eclipse of Android;]

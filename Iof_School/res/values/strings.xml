@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">儿童乐园</string>
+    
+    <string name="update_url">http://192.168.1.220/opetv-kudzu/api/application/upgrade.do</string>
+    <string name="update_apk_file">/Iof_School/update.apk</string>
+    <string name="main_act">com.iof.school.SchoolActivity</string>
+</resources>

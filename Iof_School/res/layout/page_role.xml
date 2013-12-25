@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+>
+	<LinearLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:gravity="center"
+	    android:orientation="vertical"
+	    >
+	    
+	    <RelativeLayout
+		    android:layout_width="215dp"
+		    android:layout_height="wrap_content"
+	    >
+		    <ImageView
+			    android:id="@+id/parent_head"
+			    android:layout_width="215dp"
+			    android:layout_height="215dp"
+			    android:background="@drawable/mother"
+		    />
+		    <TextView
+				android:id="@+id/parent_name"
+			    style="@style/RoleSelectName"
+			    android:text="家长"
+			    android:layout_below="@id/parent_head"
+		    />
+	    </RelativeLayout>
+	    
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="center"
+		    android:layout_marginTop="15dp"
+	    >
+	    	
+	    	<RelativeLayout 
+	    		android:id="@+id/child_head_layout1"
+			    android:layout_width="170dp"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="14dp"
+			    android:layout_marginRight="14dp"
+			    android:gravity="center"
+	    	>
+			    <ImageView
+			    	android:id="@+id/child_head1"
+				    style="@style/RoleSelectHead"
+			    />
+			    <TextView
+			    	android:id="@+id/child_name1"
+				    style="@style/RoleSelectName"
+			    	android:layout_below="@id/child_head1"
+			    />
+	    	</RelativeLayout>
+	    	
+	    	<RelativeLayout 
+	    		android:id="@+id/child_head_layout2"
+			    android:layout_width="170dp"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="14dp"
+			    android:layout_marginRight="14dp"
+			    android:gravity="center"
+	    	>
+			    <ImageView
+			    	android:id="@+id/child_head2"
+				    style="@style/RoleSelectHead"
+			    />
+			    <TextView
+			    	android:id="@+id/child_name2"
+				    style="@style/RoleSelectName"
+			    	android:layout_below="@id/child_head2"
+			    />
+	    	</RelativeLayout>
+		    
+	    	<RelativeLayout 
+	    		android:id="@+id/child_head_layout3"
+			    android:layout_width="170dp"
+			    android:layout_height="wrap_content"
+			    android:layout_marginLeft="14dp"
+			    android:layout_marginRight="14dp"
+			    android:gravity="center"
+	    	>
+			    <ImageView
+			    	android:id="@+id/child_head3"
+				    style="@style/RoleSelectHead"
+			    />
+			    <TextView
+			    	android:id="@+id/child_name3"
+				    style="@style/RoleSelectName"
+			    	android:layout_below="@id/child_head3"
+			    />
+	    	</RelativeLayout>
+	    </LinearLayout>
+	</LinearLayout>
+	
+    <LinearLayout
+    	android:id="@+id/progress_layout"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:gravity="center"
+    	android:background="#66000000"
+    	android:visibility="gone"
+    >
+    	<ProgressBar
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		style="@android:style/Widget.ProgressBar.Large"
+    	/>
+    </LinearLayout>
+
+</RelativeLayout>

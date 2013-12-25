@@ -1,0 +1,96 @@
+package com.example.demoactivityanim;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class MainActivity extends Activity implements OnClickListener {
+	private Button bn1;
+	private Button bn2;
+	private Button bn3;
+	private Button bn4;
+	private Button bn5;
+	private Button bn6;
+	private Button bn7;
+	private Button bn8;
+	private Button bn9;
+	private Button bn10;
+	private Button bn11;
+	private Button bn12;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		bn1 = (Button) findViewById(R.id.bn1);
+		bn2 = (Button) findViewById(R.id.bn2);
+		bn3 = (Button) findViewById(R.id.bn3);
+		bn4 = (Button) findViewById(R.id.bn4);
+		bn5 = (Button) findViewById(R.id.bn5);
+		bn6 = (Button) findViewById(R.id.bn6);
+		bn7 = (Button) findViewById(R.id.bn7);
+		bn8 = (Button) findViewById(R.id.bn8);
+		bn9 = (Button) findViewById(R.id.bn9);
+		bn10 = (Button) findViewById(R.id.bn10);
+		bn11 = (Button) findViewById(R.id.bn11);
+		bn12 = (Button) findViewById(R.id.bn12);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public void onClick(View v) {
+		Intent it = new Intent(IaiaiActivity.this, NextActivity.class);
+
+		startActivityForResult(it, 0);
+
+		switch (v.getId()) {
+		case R.id.bn1:
+
+			break;
+		case R.id.bn2:
+
+			break;
+		case R.id.bn3:
+
+			break;
+		case R.id.bn4:
+
+			break;
+		case R.id.bn5:
+
+			break;
+		case R.id.bn6:
+
+			break;
+		case R.id.bn7:
+
+			break;
+		case R.id.bn8:
+
+			break;
+		case R.id.bn9:
+
+			break;
+		case R.id.bn10:
+
+			break;
+		case R.id.bn11:
+
+			break;
+		case R.id.bn12:
+
+			break;
+		}
+	}
+
+}

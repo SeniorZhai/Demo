@@ -1,0 +1,93 @@
+package com.zoe.ImageCache;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import cn.trinea.android.common.entity.FailedReason;
+import cn.trinea.android.common.service.impl.ImageCache;
+import cn.trinea.android.common.service.impl.ImageMemoryCache.OnImageCallbackListener;
+
+public class MainActivity extends Activity {
+	public static final ImageCache ICON_CACHE = new ImageCache();
+	public static final String TAG = "---MainActivity---";
+	private ImageView imageView;
+	private Button button;
+	static {
+		OnImageCallbackListener imageCallBack = new OnImageCallbackListener() {
+
+			private static final long serialVersionUID = 1L;
+
+			// callback function before get image, run on ui thread
+			// 开始获取时的回调函数
+			@Override
+			public void onPreGet(String imageUrl, View view) {
+				// Log.e(TAG_CACHE, "pre get image");
+			}
+
+			// callback function after get image successfully, run on ui thread
+			// 获取成功的回调函数
+			@Override
+			public void onGetSuccess(String imageUrl, Drawable imageDrawable,
+					View view, boolean isInCache) {
+				// can be another view child, like textView and so on
+				if (view != null && imageDrawable != null) {
+					ImageView imageView = (ImageView) view;
+					imageView.setImageDrawable(imageDrawable);
+				}
+			}
+
+			// callback function after get image failed, run on ui thread
+			// 获取失败回调函数
+			@Override
+			public void onGetFailed(String imageUrl, Drawable imageDrawable,
+					View view, FailedReason failedReason) {
+				Log.d(TAG,
+						new String(new StringBuilder(128).append("get image ")
+								.append(imageUrl).append(" error")));
+			}
+		};
+		ICON_CACHE.setOnImageCallbackListener(imageCallBack);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		imageView = (ImageView)findViewById(R.id.image);
+		List<String> list = new ArrayList<String>();
+		list.add("http://192.168.1.162/static/1517A3F7A4ABC96260E2641698A4D173.jpg");
+		list.add("http://192.168.1.162/static/C8B450F67810B388A673BC406CDBC3A7.jpg");
+		list.add("http://192.168.1.162/static/FE688FB7640A93821C628E763EBB518B.jpg");
+		list.add("http://192.168.1.162/static/4C1DE43223AE1C6B46A91D366D077B49.jpg");
+		list.add("http://192.168.1.162/static/5F46E70D219543ECC70B7D25B4E3D760.jpg");
+		list.add("http://192.168.1.162/static/1517A3F7A4ABC96260E2641698A4D173.jpg");
+		list.add("http://192.168.1.162/static/1517A3F7A4ABC96260E2641698A4D173.jpg");
+		list.add("http://192.168.1.162/static/1517A3F7A4ABC96260E2641698A4D173.jpg");
+		
+		button = (Button)findViewById(R.id.button);
+		button.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				
+				
+			}
+		});
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}

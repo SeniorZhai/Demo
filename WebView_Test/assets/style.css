@@ -1,0 +1,317 @@
+@font-face {
+	font-family: "Digital";
+	src: url(digital-7.ttf);
+}
+::selection {
+	background: #FF6;
+}
+sup {
+	font-size: 9px;
+}
+.container, .container * {
+	width: 256px;
+	margin: auto;
+}
+.calculator, .settings {
+	font-family: "Digital";
+	border-radius: 7px;
+	width: 244px;
+	padding: 15px;
+	padding-bottom: 11px;
+	border: 1px solid #999;
+	background-color: #CCC;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0.03, rgb(189,189,189)), color-stop(0.52, rgb(230,230,230)));
+	-webkit-box-shadow: 0 0 7px #888;
+	box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
+	z-index: 0;
+	margin-top: 150px;
+}
+.settings {
+	background: rgb(230,230,230);
+}
+.clearfloat {
+	clear: both;
+	height: 0;
+	font-size: 1px;
+	line-height: 0px;
+}
+button {
+	cursor: pointer;
+}
+.screen {
+	background: #fff;
+	opacity: 0.7;
+	padding: 5px;
+	height: 35px;
+	width: 243px;
+	box-shadow: inset 0 0 5px #333;
+	background: #ededed -webkit-gradient(linear, left bottom, left top, color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.5, rgba(250, 250, 250, 0.5)));
+	text-align: right;
+	overflow: hidden;
+}
+.screen #screen {
+	color: #333;
+	font-size: 32px;
+	opacity: 1.0;
+	padding-right: 5px;
+	padding-left: 5px;
+	position: relative;
+	bottom: 10px;
+	letter-spacing: 2px;
+}
+.screen #method {
+	height: 17px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 10px;
+	position: relative;
+	bottom: 2px;
+	padding-left: 5px;
+	float: right;
+}
+.top .memory, .top .right {
+	margin-top: 8px;
+	float: none;
+	width: 256px;
+}
+.top .memory {
+	width: 256px;
+	margin-top: 12px;
+	margin-right: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+}
+.top button {
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	background: #FFF;
+	border: none;
+	width: 52px;
+	height: 20px;
+	font-size: 14px;
+	border: 1px #CCC solid;
+	margin-right: 8px;
+	z-index: 4;
+}
+.top button:last-child {
+	margin-right: 0px;
+}
+.top button:hover, .top button:focus:hover {
+	background: #fff;
+	border: 1px #999 solid;
+}
+.top button:active, .top button:focus {
+	background: #fff;
+	border: 1px #666 solid;
+}
+.top button.arrow {
+	position: relative;
+	top: 4px;
+}
+.top button.arrow sup {
+	font-size: 14px;
+	position: relative;
+	bottom: 2px;
+}
+.round {
+	width: 105%;
+	margin-top: 8px;
+	position: relative;
+	left: -4px;
+}
+.round button {
+	-moz-border-radius: 75px;
+	-webkit-border-radius: 75px;
+	border: none;
+	width: 52px;
+	font-family: "Digital";
+	height: 52px;
+	font-size: 28px;
+	margin: 4px;
+	border: 1px #999 solid;
+	z-index: 2;
+}
+.round button, .top button {
+	color: #000;
+	background: #333;
+	border: 2px #666 solid;
+	background: #ededed -webkit-gradient(linear, left bottom, left top, color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.5, rgba(250, 250, 250, 0.5)));
+}
+.round button:hover, .round button:focus:hover,
+.top button:hover, .top button:focus:hover {
+	background: #e4e4e4 -webkit-gradient(linear, left bottom, left top, color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.5, rgba(250, 250, 250, 0.5)));
+	border: 2px #333 solid;
+}
+.round button:active, .round button:focus,
+.top button:active, .top button:focus {
+	background: #ededed -webkit-gradient(linear, left bottom, left top, color-stop(0.5, rgba(0, 0, 0, 0)), color-stop(0.5, rgba(250, 250, 250, 0.5)));
+	border: 3px #666 solid;
+}
+.top button:active, .top button:focus {
+	border: 2px #333 solid;
+}
+#temp {
+	display: none;
+}
+/*settings icon*/
+.back {
+	display: none;
+}
+.settingsButton,
+.back {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #EEE;
+	border: 1px solid #CCC;
+	border-bottom: 1px solid #BBB;
+	border-radius: 3px;
+	color: #333;
+	font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	line-height: 1;
+	padding: 8px 0;
+	text-shadow: 0 1px 0 #EEE;
+	width: 100px;
+	z-index: 999;
+}
+.settingsButton:hover,
+.back:hover {
+	border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+}
+.settingsButton:active,
+.back:active {
+    box-shadow: inset 0 0 2px 0 #aaaaaa, 0 1px 0 0 #eeeeee;
+}
+.dark .settingsButton,
+.dark .back {
+	border: 1px solid #666;
+	color: #ccc;
+	text-shadow: none;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0.03, #333333), color-stop(0.52, #595959));
+}
+.dark .settingsButton:hover,
+.dark .back:hover {
+	border: 1px solid #666;
+}
+.dark .settingsButton:active,
+.dark .back:active {
+    box-shadow: inset 0 1px 2px 0 #333;
+	border: 1px solid #4e4e4e;
+    border-bottom: 1px solid #777777;
+}
+.settings {
+	display: none;
+	border-radius: 3px;
+	color: #333;
+	font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+	line-height: 1;
+	text-shadow: 0 1px 0 #EEE;
+	width: 500px;
+	height: auto;
+	z-index: 9999;
+	padding: 20px;
+}
+.settings a.back {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+.option {
+	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+.option a {
+	margin-left: 15px;
+}
+a {
+	cursor: pointer;
+	color: #666;
+}
+a:hover,
+a.selected {
+	color: #000;
+}
+.dark a {
+	color: #CCC;
+}
+.dark a:hover,
+.dark a.selected {
+	color: #FFF;
+}
+/*dark theme*/
+.dark {
+	background: #000;
+}
+.dark .option {
+	color: #fff;
+}
+.dark .calculator, .dark .settings {
+	border: 1px solid #666;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0.03, #333333), color-stop(0.52, #595959));
+	box-shadow: 0 -1px 5px rgba(225, 255, 255, 0.5);
+}
+.dark .settings {
+	color: #ccc;
+	background: #333333;
+	text-shadow: none;
+}
+.dark .round button, .dark .top button {
+	color: #FFF;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.5, #333), color-stop(0.5, #454545));
+	border: 2px #CCC solid;
+}
+.dark .round button:hover, .dark .round button:focus:hover, .dark .top button:hover, .dark .top button:focus:hover {
+	border: 2px #CCC solid;
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.5, #262626), color-stop(0.5, #2E2E2E));
+}
+.dark .round button:active, .dark .round button:focus, .dark .top button:active, .dark .top button:focus {
+	background: -webkit-gradient( linear, left bottom, left top, color-stop(0.5, #333), color-stop(0.5, #454545));
+	border: 3px #CCC solid;
+}
+.dark .top button:active, .dark .top button:focus {
+	border: 2px #999 solid;
+}
+/*popup*/
+.popup {
+	margin: 0;
+	width: 244px;
+	height: 380px;
+	overflow: hidden;
+}
+.popup .settingsButton, .popup .settingsButton:hover, .popup .settingsButton:active, .popup .back, .popup .back:hover, .popup .back:active {
+	position: fixed;
+	top: auto;
+	right: auto;
+	bottom: 3px;
+	left: 3px;
+	text-align: left;
+	cursor: pointer;
+	background: none;
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	text-shadow: none;
+	height: 15px;
+	z-index: 999;
+}
+.popup .calculator, .popup .settings {
+	box-shadow: none;
+	margin: 0;
+	border-radius: 0;
+	border: 0;
+	border-bottom: 2px solid #999;
+}
+.popup .settings {
+	padding: 10px;
+	width: 270px;
+}
+.popup .calculator .screen {
+	left: -3px;
+}
+.popup.dark .calculator, .popup.dark .settings {
+	border-bottom: 2px solid #666;
+}

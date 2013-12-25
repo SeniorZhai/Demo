@@ -1,0 +1,21 @@
+package com.example.ott_demo6.data;
+
+public class Json_data {
+	public class rating{
+		public class douban{
+			String rating;
+			String link;
+		}
+		public class imba{
+			String rating;
+			String link;
+		}
+	}
+	String language;
+	String area;
+	String title;
+	String brief;
+	String[] actor;
+	String sites;
+	
+}

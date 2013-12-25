@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Net影院</string>
+    <string name="dummy_content">"DUMMY
+CONTENT"</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="favorite">我的收藏</string>
+    <string name="background">壁纸</string>
+    <string name="search">搜索</string>
+    <string name="history">历史观看</string>
+    <string name="anim_before_myapp">广行Net影院欢迎您</string>
+    <string name="version">Net影院旨在提供用户海量视频资源，让用户体验到全新的视觉盛宴。视频资源包括电影、电视剧、综艺和动漫四个子类，并同步更新最新最热片源，充分发挥电视大屏优势，让用户体验舒适的电视生活。</string>
+</resources>

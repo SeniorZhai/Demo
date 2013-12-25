@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/all_bg"
+    >
+
+    <LinearLayout
+    	android:layout_width="635dp"
+    	android:layout_height="316dp"
+    	android:layout_marginTop="210dp"
+	    android:gravity="center"
+	    android:paddingBottom="46dp"
+	    android:background="@drawable/psw_box"
+    >
+    	<View
+	    	android:id="@+id/psw_input_key1"
+	    	style="@style/PswKeyBox"
+    	/>
+    	<View
+	    	android:id="@+id/psw_input_key2"
+	    	style="@style/PswKeyBox"
+    	/>
+    	<View
+	    	android:id="@+id/psw_input_key3"
+	    	style="@style/PswKeyBox"
+    	/>
+    	<View
+	    	android:id="@+id/psw_input_key4"
+	    	style="@style/PswKeyBox"
+    	/>
+    	<View
+	    	android:id="@+id/psw_input_key5"
+	    	style="@style/PswKeyBox"
+    	/>
+    	<View
+	    	android:id="@+id/psw_input_key6"
+	    	style="@style/PswKeyBox"
+    	/>
+    </LinearLayout>
+    
+    <View
+		android:id="@+id/psw_input_lab"
+    	android:layout_width="394dp"
+    	android:layout_height="33dp"
+    	android:layout_marginTop="55dp"
+	    android:background="@drawable/psw_lab"
+    />
+    
+</LinearLayout>

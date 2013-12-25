@@ -1,0 +1,58 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
+import java.util.Map;
+
+public class Get {
+	public static void main(String[] args) {
+		URL url;
+		try {
+			url = new URL("http://192.168.1.162/dianying");
+			StringBuffer html = new StringBuffer();
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setConnectTimeout(5 * 1000);
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("page", "2");
+			String str = conn.getResponseMessage();
+			InputStreamReader isr = new InputStreamReader(
+					conn.getInputStream(), "utf-8");
+			BufferedReader br = new BufferedReader(isr);
+			String temp;
+			while ((temp = br.readLine()) != null) {
+				html.append(temp);
+			}
+			br.close(); // 关闭
+			isr.close(); // 关闭
+			System.out.println(html.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	void fun() {
+
+		// 开始GET数据
+		String encoding = httpConn.getContentEncoding();
+		InputStream is = httpConn.getInputStream();
+		int read = -1;
+		baos = new ByteArrayOutputStream();
+		while ((read = is.read()) != -1) {
+			baos.write(read);
+		}
+		byte[] data = baos.toByteArray();
+		baos.close();
+
+		String content = null;
+		if (encoding != null) {
+			content = new String(data, encoding);
+		} else {
+			content = new String(data);
+		}
+	}
+}

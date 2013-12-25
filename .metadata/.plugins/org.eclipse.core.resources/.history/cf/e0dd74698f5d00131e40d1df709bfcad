@@ -1,0 +1,141 @@
+package com.example.demo_mediaplay;
+
+import android.app.Activity;
+import android.app.DownloadManager;
+import android.app.DownloadManager.Request;
+import android.content.Context;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.MediaController;
+import android.widget.MediaController.MediaPlayerControl;
+
+public class MainActivity extends Activity implements SurfaceHolder.Callback {
+	private MediaPlayer mediaPlayer;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		mediaPlayer = new MediaPlayer();
+		final SurfaceView surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
+		surfaceView.setKeepScreenOn(true);
+		SurfaceHolder holder = surfaceView.getHolder();
+		holder.addCallback(this);
+		holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+		holder.setFixedSize(400, 300);
+		Button bn = (Button) findViewById(R.id.buttonPlay);
+		bn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				mediaPlayer.start();
+			}
+		});
+		MediaController mediaController = new MediaController(this);
+		mediaController.setMediaPlayer(new MediaPlayerControl() {
+
+			@Override
+			public void start() {
+				mediaPlayer.start();
+
+			}
+
+			@Override
+			public void seekTo(int pos) {
+				mediaPlayer.seekTo(pos);
+
+			}
+
+			@Override
+			public void pause() {
+				mediaPlayer.pause();
+			}
+
+			@Override
+			public boolean isPlaying() {
+				DownloadManager downloadManager= (DownloadManager)getSystemService(Context.DOWNLOAD_SERVICE);
+				Uri uri = Uri.parse("http://developer.android.com/shareables/icon_templates-v4.0.zip");
+				DownloadManager.Request request = new Request(uri);
+				long reference = downloadManager.enqueue(request);
+
+				return mediaPlayer.isPlaying();
+			}
+
+			@Override
+			public int getDuration() {
+
+				return mediaPlayer.getDuration();
+			}
+
+			@Override
+			public int getCurrentPosition() {
+
+				return mediaPlayer.getCurrentPosition();
+			}
+
+			@Override
+			public int getBufferPercentage() {
+
+				return 0;
+			}
+
+			@Override
+			public int getAudioSessionId() {
+
+				return 0;
+			}
+
+			@Override
+			public boolean canSeekForward() {
+
+				return true;
+			}
+
+			@Override
+			public boolean canSeekBackward() {
+
+				return true;
+			}
+
+			@Override
+			public boolean canPause() {
+
+				return true;
+			}
+		});
+		
+	}
+
+	@Override
+	public void surfaceCreated(SurfaceHolder holder) {
+		try {
+			mediaPlayer.setDisplay(holder);
+			mediaPlayer.setDataSource(this, Uri
+					.parse("rtsp://192.168.1.67/1/dianying_x10001_SayYes.mp4"));
+			mediaPlayer.prepare();
+		} catch (Exception e) {
+
+		}
+
+	}
+
+	@Override
+	public void surfaceDestroyed(SurfaceHolder holder) {
+		mediaPlayer.release();
+	}
+
+	@Override
+	public void surfaceChanged(SurfaceHolder holder, int format, int width,
+			int height) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

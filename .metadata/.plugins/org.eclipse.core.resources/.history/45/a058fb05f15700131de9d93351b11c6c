@@ -1,0 +1,24 @@
+package com.example.demo_image;
+
+import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		ImageView imageView01 = (ImageView)findViewById(R.id.image01);
+		ImageView imageView02 = (ImageView)findViewById(R.id.image02);
+				
+		// Bitmap bitmap = ImageUtil.drawableToBitmap(drawable);
+		 Bitmap bitmap = BitmapFactory.decodeResource(r, R.drawable.icon);
+		 Bitmap reflectBitmap = ImageUtil.createReflectionImageWithOrigin(bitmap);
+		 imageView02.setImageBitmap(reflectBitmap);
+		
+	}
+}

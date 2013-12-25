@@ -1,0 +1,42 @@
+package com.example.demoactivityanim;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class MainActivity extends Activity implements OnClickListener{
+	private Button bn1;
+	private Button bn2;
+	private Button bn3;
+	private Button bn4;
+	private Button bn5;
+	private Button bn6;
+	private Button bn7;
+	private Button bn8;
+	private Button bn9;
+	private Button bn10;
+	private Button bn11;
+	private Button bn12;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public void onClick(View v) {
+		
+		
+	}
+
+}

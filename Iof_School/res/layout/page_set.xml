@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <View
+    	android:id="@+id/page_set_all_layout"
+    	android:layout_width="863dp"
+    	android:layout_height="584dp"
+    	android:layout_marginTop="44dp"
+    	android:background="@drawable/set_all_bg"
+    	android:layout_centerHorizontal="true"
+    />
+    <!-- 标题按钮 -->
+    <LinearLayout
+    	android:id="@+id/page_set_title_layout"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="7dp"
+    	android:layout_marginLeft="6dp"
+    	android:layout_alignTop="@id/page_set_all_layout"
+    	android:layout_alignLeft="@id/page_set_all_layout"
+    >
+	    <TextView
+	    	style="@style/SetTitleBtn"
+	    	android:background="@drawable/set_title_btn1"
+	    	android:text="时间管理"
+	    />
+	    <TextView
+	    	style="@style/SetTitleBtn"
+	    	android:background="@drawable/set_title_btn2"
+	    	android:text="密码管理"
+	    />
+	    <TextView
+	    	style="@style/SetTitleBtn"
+	    	android:background="@drawable/set_title_btn2"
+	    	android:text="资源管理"
+	    />
+    </LinearLayout>
+    <!-- 标题按钮选择框 -->
+    <LinearLayout
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignTop="@id/page_set_title_layout"
+    	android:layout_alignLeft="@id/page_set_title_layout"
+    >
+	    <View
+	    	android:id="@+id/page_set_time_select"
+	    	style="@style/SetTitleBtnSelect"
+	    	android:background="@drawable/set_title_btn_select"
+	    />
+	    <View
+	    	android:id="@+id/page_set_psw_select"
+	    	style="@style/SetTitleBtnSelect"
+	    	android:background="@drawable/set_title_btn_select"
+	    />
+	    <View
+	    	android:id="@+id/page_set_res_select"
+	    	style="@style/SetTitleBtnSelect"
+	    	android:background="@drawable/set_title_btn_select"
+	    />
+    </LinearLayout>
+    <!-- 模式按钮 -->
+    <LinearLayout
+    	android:id="@+id/page_set_mode_layout"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+	    android:layout_marginTop="10dp"
+	    android:layout_marginLeft="46dp"
+	    android:layout_below="@id/page_set_title_layout"
+    	android:layout_alignLeft="@id/page_set_all_layout"
+    >
+	    <TextView
+	    	style="@style/SetModeBtn"
+	    	android:background="@drawable/set_mode_btn"
+	    	android:text="每   天"
+	    />
+	    <TextView
+	    	style="@style/SetModeBtn"
+	    	android:background="@drawable/set_mode_btn"
+	    	android:text="平时/周末"
+	    />
+    </LinearLayout>
+    <!-- 标题按钮选择框 -->
+    <LinearLayout 
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+	    android:layout_alignTop="@id/page_set_mode_layout"
+    	android:layout_alignLeft="@id/page_set_mode_layout"
+   	>
+	    <TextView
+	    	android:id="@+id/page_set_mode1_select"
+	    	style="@style/SetModeBtnSelect"
+	    	android:background="@drawable/set_mode_btn_select"
+	    />
+	    <TextView
+	    	android:id="@+id/page_set_mode2_select"
+	    	style="@style/SetModeBtnSelect"
+	    	android:background="@drawable/set_mode_btn_select"
+	    />
+    </LinearLayout>
+    <!-- 选择/分割线 -->
+    <View
+    	android:id="@+id/page_set_line"
+    	android:layout_width="863dp"
+    	android:layout_height="15dp"
+    	android:layout_marginTop="-5dp"
+	    android:background="@drawable/set_line"
+	    android:layout_below="@id/page_set_mode_layout"
+    	android:layout_alignLeft="@id/page_set_all_layout"
+    />
+    <!-- 模式选择箭头1 -->
+    <View
+    	android:id="@+id/page_set_line_mode1"
+    	android:layout_width="18dp"
+    	android:layout_height="15dp"
+    	android:layout_marginLeft="116dp"
+	    android:background="@drawable/set_line_select"
+	    android:layout_alignTop="@id/page_set_line"
+    	android:layout_alignLeft="@id/page_set_line"
+    />
+    <!-- 模式选择箭头2 -->
+    <View
+    	android:id="@+id/page_set_line_mode2"
+    	android:layout_width="18dp"
+    	android:layout_height="15dp"
+    	android:layout_marginLeft="268dp"
+	    android:background="@drawable/set_line_select"
+	    android:layout_alignTop="@id/page_set_line"
+    	android:layout_alignLeft="@id/page_set_line"
+    />
+    <!-- 时间设置区域1 -->
+    <include
+    	layout="@layout/item_time_set"
+    	android:id="@+id/page_set_time_layout1"
+    	android:layout_width="791dp"
+    	android:layout_height="190dp"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginLeft="39dp"
+	    android:layout_below="@id/page_set_line"
+    	android:layout_alignLeft="@id/page_set_line"
+    />
+    <!-- 时间设置区域2 -->
+    <include
+    	layout="@layout/item_time_set"
+    	android:id="@+id/page_set_time_layout2"
+    	android:layout_width="791dp"
+    	android:layout_height="190dp"
+    	android:layout_marginLeft="39dp"
+	    android:layout_below="@id/page_set_time_layout1"
+    	android:layout_alignLeft="@id/page_set_line"
+    />
+    
+    <TextView
+    	android:id="@+id/page_set_ok"
+    	style="@style/ResInfoBtn"
+    	android:layout_marginTop="5dp"
+    	android:layout_marginLeft="200dp"
+    	android:text="确   定"
+    	android:background="@drawable/info_btn2"
+    	android:layout_below="@id/page_set_all_layout"
+    	android:layout_alignLeft="@id/page_set_all_layout"
+    />
+    <TextView
+    	android:id="@+id/page_set_cancel"
+    	style="@style/ResInfoBtn"
+    	android:layout_marginTop="5dp"
+    	android:layout_marginRight="200dp"
+    	android:text="取   消"
+    	android:background="@drawable/info_btn1"
+    	android:layout_below="@id/page_set_all_layout"
+    	android:layout_alignRight="@id/page_set_all_layout"
+    />
+    
+    <View
+    	android:id="@+id/page_set_ok_select"
+    	style="@style/ResInfoBtn"
+    	android:background="@drawable/info_btn_select"
+    	android:layout_alignTop="@id/page_set_ok"
+    	android:layout_alignLeft="@id/page_set_ok"
+    />
+    
+    <View
+    	android:id="@+id/page_set_cancel_select"
+    	style="@style/ResInfoBtn"
+    	android:background="@drawable/info_btn_select"
+    	android:layout_alignTop="@id/page_set_cancel"
+    	android:layout_alignLeft="@id/page_set_cancel"
+    />
+    
+</RelativeLayout>

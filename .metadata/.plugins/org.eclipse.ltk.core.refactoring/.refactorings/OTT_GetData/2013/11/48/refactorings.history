@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;GetData.java&apos; to &apos;OTT_GetData_2/src/com.example.ott_getdata_2&apos;&#x0D;&#x0A;- Original project: &apos;OTT_GetData&apos;&#x0D;&#x0A;- Destination element: &apos;OTT_GetData_2/src/com.example.ott_getdata_2&apos;&#x0D;&#x0A;- Original element: &apos;com.zoe.get.GetData.java&apos;" description="Copy compilation unit" destination="=OTT_GetData_2/src&lt;com.example.ott_getdata_2" element1="/src&lt;com.zoe.get{GetData.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1385427558569" units="1" version="1.0"/>
+</session>

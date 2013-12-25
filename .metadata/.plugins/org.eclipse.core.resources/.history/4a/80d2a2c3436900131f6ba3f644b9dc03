@@ -1,0 +1,54 @@
+package com.zoe.ImageCache;
+
+import cn.trinea.android.common.service.impl.ImageCache;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+
+public class MainActivity extends Activity {
+	public static final ImageCache ICON_CACHE = new  ImageCache();
+	static
+	 {
+	    OnImageCallbackListener imageCallBack = new OnImageCallbackListener() {
+	 
+	        private static final long serialVersionUID = 1L;
+	 
+	        // callback function before get image, run on ui thread
+	        @Override
+	        public void onPreGet(String imageUrl, View view) {
+	            // Log.e(TAG_CACHE, "pre get image");
+	        }
+	 
+	        // callback function after get image successfully, run on ui thread
+	        @Override
+	        public void onGetSuccess(String imageUrl, Drawable imageDrawable, View view, boolean isInCache) {
+	            // can be another view child, like textView and so on
+	            if (view != null && imageDrawable != null) {
+	                ImageView imageView = (ImageView)view;
+	                imageView.setImageDrawable(imageDrawable);
+	            }
+	        }
+	 
+	        // callback function after get image failed, run on ui thread
+	        @Override
+	        public void onGetFailed(String imageUrl, Drawable imageDrawable, View view, FailedReason failedReason) {
+	            Log.e(TAG_CACHE,
+	                  new StringBuilder(128).append("get image ").append(imageUrl).append(" error"));
+	        }
+	    };
+	    ICON_CACHE.setOnImageCallbackListener(imageCallBack);
+	}
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}

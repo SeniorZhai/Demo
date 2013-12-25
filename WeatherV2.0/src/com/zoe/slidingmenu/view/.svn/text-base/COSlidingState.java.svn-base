@@ -1,0 +1,28 @@
+package com.carlos.myslidingmenu.view;
+
+/**
+ * 当前界面的状态
+ * @author carlos carlosk@163.com
+ * @version 创建时间：2013-4-16 上午10:52:25 类说明
+ */
+
+public enum COSlidingState {
+	SHOWLEFT("显示左边"),//显示左边 
+	SHOWCENTER("显示中间"),//显示中间
+	SHOWRIGHT("显示右边");//显示右边
+	
+	
+	private final String desc;
+	private COSlidingState(String desc) {
+		this.desc = desc;
+	}
+	/**
+	 * 获取注释
+	 * @author carlos carlosk@163.com
+	 * @version 创建时间：2013-4-16 上午11:10:38
+	 * @return
+	 */
+	public String getDesc(){
+		return desc;
+	}
+}

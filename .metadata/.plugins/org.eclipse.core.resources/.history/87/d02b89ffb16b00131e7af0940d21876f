@@ -1,0 +1,39 @@
+package com.zoe.ott_videoview;
+
+import io.vov.vitamio.widget.MediaController;
+import io.vov.vitamio.widget.VideoView;
+import android.app.Activity;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnPreparedListener;
+import android.os.Bundle;
+import android.util.Log;
+
+public class PlayerActivity extends Activity {
+	private VideoView videoView;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		if (!.vov.vitamio.LibsChecker.checkVitamioLibs(this))
+			return;
+		setContentView(R.layout.layout_player);
+		videoView = (VideoView) findViewById(R.id.surface_view);
+		videoView.setMediaController(new MediaController(this));
+
+		Intent intent = getIntent();
+		String str= intent.getStringExtra("url");
+		
+		videoView.setVideoPath(str);
+		videoView.setVideoQuality(MediaPlayer.VIDEOQUALITY_HIGH);
+		videoView.setOnPreparedListener(new OnPreparedListener() {
+			@Override
+			public void onPrepared(MediaPlayer arg0) {
+				Log.d("-------", "º”‘ÿÕÍ≥…");
+				videoView.start();
+
+			}
+		});
+
+	}
+}

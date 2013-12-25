@@ -1,0 +1,41 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.List;
+import java.util.Map;
+
+public class Get {
+	public static void main(String[] args) {
+	
+	}
+	private void fun()
+	{
+		URL url;
+		try {
+			url = new URL("http://192.168.1.162/dianying");
+			StringBuffer html = new StringBuffer();
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setConnectTimeout(5 * 1000);
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("page", "2");
+			String str = conn.getResponseMessage();
+			InputStreamReader isr = new InputStreamReader(
+					conn.getInputStream(), "utf-8");
+			BufferedReader br = new BufferedReader(isr);
+			String temp;
+			while ((temp = br.readLine()) != null) {
+				html.append(temp);
+			}
+			br.close(); // ¹Ø±Õ
+			isr.close(); // ¹Ø±Õ
+			System.out.println(html.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+}
